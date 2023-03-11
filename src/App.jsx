@@ -1,13 +1,41 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, Button, Container, Row } from "react-bootstrap";
+import { Card, Modal, Button, Container, Row } from "react-bootstrap";
 import emailIcon from "./assets/email-svgrepo-com.svg";
 import webIcon from "./assets/website-ui-web-svgrepo-com.svg";
 import companyIcon from "./assets/company-svgrepo-com.svg";
+import houseIcon from "./assets/house-svgrepo-com.svg";
+import phoneIcon from "./assets/phone-outgoing-svgrepo-com.svg";
 
 function App() {
   const [data, setData] = useState([]);
+  const [show, setShow] = useState(false);
+  const [profile, setProfile] = useState();
+  const [fav, setFav] = useState([]);
+
+  const handleClose = () => setShow(false);
+  const handleShow = (index) => {
+    setShow(true);
+    setProfile(index);
+  };
+
+  const handleFav = (int) => {
+    let temp = fav;
+    if (temp.indexOf(int) !== -1) {
+      temp = temp.filter((item) => item !== int);
+      setFav(temp);
+      alert("unfaved");
+    } else {
+      temp.push(int);
+      temp = temp.filter((item) => typeof item !== String)
+      setFav(temp);
+      alert("faved");
+    }
+  };
+  useEffect(()=> {
+    console.log(fav);
+  }, [fav])
 
   useEffect(() => {
     axios
@@ -39,49 +67,126 @@ function App() {
         <Row className="m-auto">
           {data.map((item, index) => {
             return (
-              <Card className="m-3" style={{ width: "18rem" }}>
+              <Card
+                className="m-3"
+                key={index}
+                style={{ width: "18rem", border: "none" }}
+              >
                 <Card.Img
                   variant="top"
                   src={links[index]}
-                  style={{ maxHeight: "230px" }}
+                  style={{ height: "230px" }}
                 />
                 <Card.Body>
-                  <Card.Title>{item.name}</Card.Title>
-                  <Card.Text>
-                    <div>
+                  <Card.Title>{item.username}</Card.Title>
+
+                  <div>
+                    <img
+                      src={emailIcon}
+                      alt=""
+                      style={{ width: "20px", height: "20px" }}
+                    />
+                    {item.email}
+                  </div>
+                  <div>
+                    <a href={item.website} style={{ textDecoration: "none" }}>
                       <img
-                        src={emailIcon}
+                        src={webIcon}
                         alt=""
                         style={{ width: "20px", height: "20px" }}
                       />
-                      {item.email}
-                    </div>
-                    <div>
-                      <a href={item.website} style={{ textDecoration: "none" }}>
-                        <img
-                          src={webIcon}
-                          alt=""
-                          style={{ width: "20px", height: "20px" }}
-                        />
-                        <span> My Website</span>
-                      </a>
-                    </div>
-                    <div>
-                      <img
-                        src={companyIcon}
-                        alt=""
-                        style={{ width: "20px", height: "20px" }}
-                      />
-                      {item.company.name}
-                    </div>
-                  </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
+                      <span> My Website</span>
+                    </a>
+                  </div>
+                  <div style={{ marginBottom: "1em" }}>
+                    <img
+                      src={companyIcon}
+                      alt=""
+                      style={{ width: "20px", height: "20px" }}
+                    />
+                    {item.company.name}
+                  </div>
+
+                  <Button onClick={() => handleShow(index)}>Detail</Button>
+                  <Button className="btn-fav" onClick={() => handleFav(index)}>
+                    {fav.length == 0 ? (
+                      <>Favorite</>
+                    ) : (
+                      <>
+                        {fav.find((item) => item == index) >= 0 ? (
+                          <>Unfavorite</>
+                        ) : (
+                          <>Favorites</>
+                        )}
+                      </>
+                    )}
+                  </Button>
                 </Card.Body>
               </Card>
             );
           })}
         </Row>
       </Container>
+
+      {profile ? (
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>{profile ? data[profile].username : null}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div>{data[profile].name}</div>
+            <div>
+              <a href={"mailto: abc@example.com" + data[profile].emai}>
+                <img
+                  src={emailIcon}
+                  alt=""
+                  style={{ width: "20px", height: "20px" }}
+                />{" "}
+                {data[profile].email}
+              </a>
+            </div>
+            <div>
+              <img
+                src={houseIcon}
+                alt=""
+                style={{ width: "20px", height: "20px" }}
+              />{" "}
+              {data[profile].address.city}
+              <span> City</span>
+            </div>
+            <div>
+              <a href={"tel:+" + data[profile].phone}>
+                <img
+                  src={phoneIcon}
+                  alt=""
+                  style={{ width: "20px", height: "20px" }}
+                />{" "}
+                {data[profile].phone}
+              </a>
+            </div>
+            <div>
+              <a href={data[profile].website}>
+                <img
+                  src={webIcon}
+                  alt=""
+                  style={{ width: "20px", height: "20px" }}
+                />{" "}
+                My Website
+              </a>
+            </div>
+            <div>
+              <img
+                src={companyIcon}
+                alt=""
+                style={{ width: "20px", height: "20px" }}
+              />{" "}
+              {data[profile].company.name}
+            </div>
+          </Modal.Body>
+        </Modal>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

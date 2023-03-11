@@ -1,0 +1,50 @@
+body {
+  background-color: #121212 !important;
+}
+.card {
+  box-shadow: 0 8px 16px 0 rgba(226, 222, 235, 0.5),
+    0 6px 50px 0 rgba(226, 222, 235, 0.5);
+}
+
+.card:hover {
+  animation: bgColor 1s;
+  background-image: radial-gradient(
+    circle,
+    transparent,
+    rgba(255, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+@keyframes bgColor {
+  from {
+    background-color: rgba(53, 188, 230, 0.753);
+  }
+  to {
+    background-color: white;
+  }
+}
+
+.card-img-top {
+  margin-top: 10px;
+}
+
+button {
+  border: none !important;
+  color: red !important;
+  background-color: aliceblue !important;
+}
+
+.card button:hover {
+  background: #121212 !important;
+  color: aliceblue !important;
+}
+
+.btn-fav {
+    margin-left: 1em;
+}
+
+
+.modal a {
+    text-decoration: none;
+}
