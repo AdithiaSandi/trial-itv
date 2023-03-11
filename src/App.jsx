@@ -33,9 +33,6 @@ function App() {
       alert("faved");
     }
   };
-  useEffect(()=> {
-    console.log(show);
-  }, [show])
 
   useEffect(() => {
     axios
