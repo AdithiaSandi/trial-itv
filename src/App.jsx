@@ -34,8 +34,8 @@ function App() {
     }
   };
   useEffect(()=> {
-    console.log(fav);
-  }, [fav])
+    console.log(show);
+  }, [show])
 
   useEffect(() => {
     axios
@@ -128,10 +128,10 @@ function App() {
         </Row>
       </Container>
 
-      {profile ? (
+      {profile == 0 || profile ? (
         <Modal show={show} onHide={handleClose} centered>
           <Modal.Header closeButton>
-            <Modal.Title>{profile ? data[profile].username : null}</Modal.Title>
+            <Modal.Title>{data[profile].username}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div>{data[profile].name}</div>
