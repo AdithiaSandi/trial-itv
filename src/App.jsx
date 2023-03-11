@@ -28,7 +28,7 @@ function App() {
       alert("unfaved");
     } else {
       temp.push(int);
-      temp = temp.filter((item) => typeof item !== String)
+      temp = temp.filter((item) => typeof item !== String);
       setFav(temp);
       alert("faved");
     }
@@ -86,7 +86,10 @@ function App() {
                     {item.email}
                   </div>
                   <div>
-                    <a href={item.website} style={{ textDecoration: "none" }}>
+                    <a
+                      href={"https://" + item.website} target="_blank"
+                      style={{ textDecoration: "none" }}
+                    >
                       <img
                         src={webIcon}
                         alt=""
