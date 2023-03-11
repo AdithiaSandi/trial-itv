@@ -129,7 +129,7 @@ function App() {
       </Container>
 
       {profile ? (
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose} centered>
           <Modal.Header closeButton>
             <Modal.Title>{profile ? data[profile].username : null}</Modal.Title>
           </Modal.Header>
