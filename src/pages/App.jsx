@@ -4,12 +4,15 @@ import axios from "axios";
 import { Container, Row } from "react-bootstrap";
 import { ProfileCard } from "../components/ProfileCard.jsx";
 import { DetailModal } from "../components/DetailModal";
+import { useSelector, useDispatch } from "react-redux";
+import { addFavorite, selectFavorite } from "../reducer/favoriteSlice";
 
 function App() {
   const [data, setData] = useState([]);
   const [show, setShow] = useState(false);
   const [profile, setProfile] = useState();
-  const [fav, setFav] = useState([]);
+  const fav = useSelector(selectFavorite);
+  const dispatch = useDispatch();
 
   const handleClose = () => setShow(false);
   const handleShow = (index) => {
@@ -21,12 +24,12 @@ function App() {
     let temp = fav;
     if (temp.indexOf(int) !== -1) {
       temp = temp.filter((item) => item !== int);
-      setFav(temp);
+      dispatch(addFavorite(temp));
       alert("unfaved");
     } else {
-      temp.push(int);
       temp = temp.filter((item) => typeof item !== String);
-      setFav(temp);
+      temp.push(int);
+      dispatch(addFavorite(temp));
       alert("faved");
     }
   };
