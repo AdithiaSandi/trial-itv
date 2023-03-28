@@ -6,6 +6,7 @@ import { ProfileCard } from '../components/ProfileCard.jsx'
 import { DetailModal } from '../components/DetailModal'
 import { useSelector, useDispatch } from 'react-redux'
 import { addFavorite, selectFavorite } from '../state/reducer/favoriteSlice'
+import { MenuBar } from '../components/MenuBar'
 
 function App () {
   const [data, setData] = useState([])
@@ -49,6 +50,7 @@ function App () {
 
   return (
     <div className="App">
+      <MenuBar/>
       <Container>
         <Row className="m-auto">
           {data.map((item, index) => {
