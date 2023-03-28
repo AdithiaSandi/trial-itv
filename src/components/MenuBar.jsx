@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import './MenuBar.css'
 import logo from '../assets/logo.svg'
 import search from '../assets/search-magnifying-glass-svgrepo-com.svg'
+import condense from '../assets/chevron-right-duo-svgrepo-com.svg'
+import collapse from '../assets/burger-menu-svgrepo-com.svg'
 
 export const MenuBar = () => {
   const [showSearch, setShowSearch] = useState('hid')
+  const [showNav, setShowNav] = useState('false')
 
   const toggleSearch = () => {
-    setShowSearch(prev => {
+    setShowSearch((prev) => {
       if (prev === 'hid') {
         return 'show'
       } else {
@@ -15,15 +18,21 @@ export const MenuBar = () => {
       }
     })
   }
+
+  const toggleNav = () => {
+    setShowNav(prev => {
+      return !prev
+    })
+  }
   return (
     <header>
       <div className="header-border">
         <div className="container">
           <div className="wrapper">
-            <div className="start">
-              <a href=".">
-                <img src={logo}></img>
-              </a>
+            <a href=".">
+              <img src={logo}></img>
+            </a>
+            <div className={window.innerWidth <= 768 ? 'start ' + showNav : 'start'}>
               <ul>
                 <li>Home</li>
                 <li>Products</li>
@@ -32,15 +41,20 @@ export const MenuBar = () => {
               </ul>
             </div>
             <div className="end">
-              <button className='mobile' onClick={() => toggleSearch()}>
-                <img src={search} />
+              <button className="mobile" onClick={() => toggleSearch()}>
+                <img src={showSearch === 'hid' ? search : condense} />
               </button>
               <div className={showSearch}>
                 <input type="search" />
-                <button className='normal'>
+                <button className="normal">
                   <img src={search} />
                 </button>
               </div>
+            </div>
+            <div className="btn-collapse">
+              <button onClick={() => toggleNav()}>
+                <img src={collapse} />
+              </button>
             </div>
           </div>
         </div>
