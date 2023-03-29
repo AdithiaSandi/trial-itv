@@ -7,7 +7,8 @@ import collapse from '../assets/burger-menu-svgrepo-com.svg'
 
 export const MenuBar = () => {
   const [showSearch, setShowSearch] = useState('hid')
-  const [showNav, setShowNav] = useState('false')
+  const [showNav, setShowNav] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
 
   const toggleSearch = () => {
     setShowSearch((prev) => {
@@ -24,6 +25,22 @@ export const MenuBar = () => {
       return !prev
     })
   }
+
+  const resizeResponse = () => {
+    console.log('masuk')
+    if (window.innerWidth > 768) {
+      // document.getElementsByClassName('start').className = 'start'
+      // console.log(document.getElementsByClassName('start'))
+      setIsMobile(false)
+    } else {
+      // document.getElementsByClassName('start').className = 'start ' + showNav
+      // console.log(document.getElementsByClassName('start'))
+      setIsMobile(true)
+    }
+  }
+
+  window.onresize = resizeResponse
+
   return (
     <header>
       <div className="header-border">
@@ -32,7 +49,7 @@ export const MenuBar = () => {
             <a href=".">
               <img src={logo}></img>
             </a>
-            <div className={window.innerWidth <= 768 ? 'start ' + showNav : 'start'}>
+            <div className={isMobile ? 'start ' + showNav : 'start'}>
               <ul>
                 <li>Home</li>
                 <li>Products</li>
