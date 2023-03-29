@@ -92,11 +92,11 @@ header .end button {
     border-left: var(--background) solid 2px;
   }
 
-  header .end button.normal {
+  header .end button.normal-search {
     display: none;
   }
 
-  header .end button.mobile {
+  header .end button.mobile-search {
     transform: scale(-1, 1);
     background-color: inherit;
   }
@@ -118,11 +118,19 @@ header .end button {
 }
 
 @media (min-width: 769px) {
-  header .end button.mobile {
+  header .end button.mobile-search {
     display: none;
   }
   header .wrapper .btn-collapse {
     display: none;
+  }
+}
+
+@media (width < 520px) {
+  header .end.show {
+    border: blue solid 1px;
+    position: absolute;
+    top: 60px;
   }
 }
 

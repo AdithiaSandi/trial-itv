@@ -57,13 +57,13 @@ export const MenuBar = () => {
                 <li>About</li>
               </ul>
             </div>
-            <div className="end">
-              <button className="mobile" onClick={() => toggleSearch()}>
+            <div className={showSearch === 'show' ? isMobile ? 'end show' : 'end hid' : 'end'}>
+              <button className="mobile-search" onClick={() => toggleSearch()}>
                 <img src={showSearch === 'hid' ? search : condense} />
               </button>
               <div className={showSearch}>
                 <input type="search" />
-                <button className="normal">
+                <button className="normal-search">
                   <img src={search} />
                 </button>
               </div>
