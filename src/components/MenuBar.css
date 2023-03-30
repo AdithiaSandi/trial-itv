@@ -127,10 +127,19 @@ header .end button {
 }
 
 @media (width < 520px) {
+
+  header .end {
+    max-width: 70%;
+  }
+
   header .end.show {
     border: blue solid 1px;
     position: absolute;
     top: 60px;
+  }
+
+  header .end .show {
+    width: 85%;
   }
 }
 
