@@ -29,12 +29,8 @@ export const MenuBar = () => {
   const resizeResponse = () => {
     console.log('masuk')
     if (window.innerWidth > 768) {
-      // document.getElementsByClassName('start').className = 'start'
-      // console.log(document.getElementsByClassName('start'))
       setIsMobile(false)
     } else {
-      // document.getElementsByClassName('start').className = 'start ' + showNav
-      // console.log(document.getElementsByClassName('start'))
       setIsMobile(true)
     }
   }
