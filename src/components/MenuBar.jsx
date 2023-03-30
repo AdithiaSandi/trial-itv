@@ -47,10 +47,10 @@ export const MenuBar = () => {
             </a>
             <div className={isMobile ? 'start ' + showNav : 'start'}>
               <ul>
-                <li>Home</li>
-                <li>Products</li>
-                <li>Team</li>
-                <li>About</li>
+                <li><a href='.'>Home</a></li>
+                <li><a href='.'>Products</a></li>
+                <li><a href='.'>Team</a></li>
+                <li><a href='.'>About</a></li>
               </ul>
             </div>
             <div className={showSearch === 'show' ? isMobile ? 'end show' : 'end hid' : 'end'}>
