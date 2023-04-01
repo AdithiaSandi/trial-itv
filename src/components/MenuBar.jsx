@@ -21,15 +21,16 @@ export const MenuBar = () => {
   }
 
   const toggleNav = () => {
-    setShowNav(prev => {
+    setShowNav((prev) => {
       return !prev
     })
   }
 
   const resizeResponse = () => {
     console.log('masuk')
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= 768) {
       setIsMobile(false)
+      setShowNav(false)
     } else {
       setIsMobile(true)
     }
@@ -42,18 +43,34 @@ export const MenuBar = () => {
       <div className="header-border">
         <div className="container">
           <div className="wrapper">
-            <a href=".">
+            <a href="." className='logo'>
               <img src={logo}></img>
             </a>
-            <div className={isMobile ? 'start ' + showNav : 'start'}>
+            <div className={isMobile ? 'start ' + 'false' : 'start'}>
               <ul>
-                <li><a href='.'>Home</a></li>
-                <li><a href='.'>Products</a></li>
-                <li><a href='.'>Team</a></li>
-                <li><a href='.'>About</a></li>
+                <li>
+                  <a href=".">Home</a>
+                </li>
+                <li>
+                  <a href=".">Products</a>
+                </li>
+                <li>
+                  <a href=".">Team</a>
+                </li>
+                <li>
+                  <a href=".">About</a>
+                </li>
               </ul>
             </div>
-            <div className={showSearch === 'show' ? isMobile ? 'end show' : 'end hid' : 'end'}>
+            <div
+              className={
+                showSearch === 'show'
+                  ? isMobile
+                    ? 'end show'
+                    : 'end hid'
+                  : 'end'
+              }
+            >
               <button className="mobile-search" onClick={() => toggleSearch()}>
                 <img src={showSearch === 'hid' ? search : condense} />
               </button>
@@ -69,6 +86,20 @@ export const MenuBar = () => {
                 <img src={collapse} />
               </button>
             </div>
+          </div>
+          <div className="search-small">
+            <input type="search" spellCheck='false'/>
+            <button className="normal-search">
+              <img src={search} />
+            </button>
+          </div>
+          <div className={ isMobile ? 'collapsible ' + showNav : 'collapsible'}>
+            <ul>
+              <li><a href='.'>Home</a></li>
+              <li><a href='.'>Products</a></li>
+              <li><a href='.'>Team</a></li>
+              <li><a href='.'>About</a></li>
+            </ul>
           </div>
         </div>
       </div>
