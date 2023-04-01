@@ -1,4 +1,5 @@
 import React from 'react'
+import './ProfileCard.css'
 import { Card, Button } from 'react-bootstrap'
 import emailIcon from '../assets/email-svgrepo-com.svg'
 import webIcon from '../assets/website-ui-web-svgrepo-com.svg'
@@ -21,7 +22,7 @@ export const ProfileCard = ({ item, index, fav, handleFav, handleShow }) => {
 
   return (
     <Card
-      className="m-3"
+      className="m-3 ms-0 me-0 text-truncate"
       key={index}
       style={{ width: '18rem', border: 'none' }}
       onMouseOver={() => console.log('hover')}
@@ -30,55 +31,66 @@ export const ProfileCard = ({ item, index, fav, handleFav, handleShow }) => {
       <Card.Body>
         <Card.Title>{item.username}</Card.Title>
 
-        <div style={{ textOverflow: 'ellipsis', display: 'flex' }}>
-          <img
-            src={emailIcon}
-            alt=""
-            style={{ width: '20px', height: '20px' }}
-          />
-          {item.email}
-        </div>
-        <div>
-          <a
-            href={'https://' + item.website}
-            target="_blank"
-            style={{ textDecoration: 'none' }} rel="noreferrer"
-          >
+        <div className="content">
+          <div className="email" style={{ textOverflow: 'ellipsis' }}>
             <img
-              src={webIcon}
+              src={emailIcon}
               alt=""
               style={{ width: '20px', height: '20px' }}
             />
-            <span> My Website</span>
-          </a>
-        </div>
-        <div style={{ marginBottom: '1em' }}>
-          <img
-            src={companyIcon}
-            alt=""
-            style={{ width: '20px', height: '20px' }}
-          />
-          {item.company.name}
+            <span> {item.email}</span>
+          </div>
+          <div>
+            <a
+              href={'https://' + item.website}
+              target="_blank"
+              style={{ textDecoration: 'none' }}
+              rel="noreferrer"
+            >
+              <img
+                src={webIcon}
+                alt=""
+                style={{ width: '20px', height: '20px' }}
+              />
+              <span> My Website</span>
+            </a>
+          </div>
+          <div style={{ marginBottom: '1em' }}>
+            <img
+              src={companyIcon}
+              alt=""
+              style={{ width: '20px', height: '20px' }}
+            />
+            <span> {item.company.name}</span>
+          </div>
         </div>
 
-        <Button onClick={() => handleShow(index)}>Detail</Button>
-        <Button className="btn-fav" onClick={() => handleFav(index)}>
-          {fav.length === 0
-            ? (
-            <>Favorite</>
-              )
-            : (
-            <>
-              {fav.find((item) => item === index) >= 0
-                ? (
-                <>Unfavorite</>
-                  )
-                : (
-                <>Favorites</>
-                  )}
-            </>
-              )}
-        </Button>
+        <Card.Footer>
+          <Button variant="dark" onClick={() => handleShow(index)}>
+            Detail
+          </Button>
+          <Button
+            variant="dark"
+            className="btn-fav m-0"
+            onClick={() => handleFav(index)}
+          >
+            {fav.length === 0
+              ? (
+              <>Favorite</>
+                )
+              : (
+              <>
+                {fav.find((item) => item === index) >= 0
+                  ? (
+                  <>Unfavorite</>
+                    )
+                  : (
+                  <>Favorites</>
+                    )}
+              </>
+                )}
+          </Button>
+        </Card.Footer>
       </Card.Body>
     </Card>
   )

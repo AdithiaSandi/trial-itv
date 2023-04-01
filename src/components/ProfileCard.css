@@ -1,0 +1,75 @@
+.card {
+  box-shadow: 0 8px 16px 0 rgba(226, 222, 235, 0.5),
+    0 6px 50px 0 rgba(226, 222, 235, 0.5);
+}
+
+.card:hover {
+  animation: bgColor 1s;
+  background-image: radial-gradient(
+    circle,
+    transparent,
+    rgba(255, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+@media (width < 768px) {
+    .cards .cards-row .card .card-body .card-title {
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .cards .cards-row .card .card-body .content {
+        display: none;
+    }
+
+    .cards .cards-row .card .card-body .card-footer {
+        background-color: white;
+        justify-content: space-evenly;
+        align-items: center;
+        display: flex;
+    }
+}
+
+@media (width < 768px) and (width >= 540px) {
+
+    .container.cards {
+        margin: 0;
+        padding: 0;
+        display: inline;
+    }
+
+    .container.cards .cards-row .card {
+        width: 14rem !important;
+    }
+
+    /* .cards .cards-row .card {
+        width: 14rem !important;
+    } */
+}
+
+@keyframes bgColor {
+  from {
+    background-color: rgba(53, 188, 230, 0.753);
+  }
+  to {
+    background-color: white;
+  }
+}
+
+.card-img-top {
+  margin-top: 10px;
+}
+
+.btn-fav {
+  margin-left: 1em;
+}
+
+.cards .cards-row .card .card-body .content span {
+    vertical-align: middle;
+}
+
+.cards .cards-row .card .card-body {
+  padding-left: 0;
+  padding-right: 0;
+}

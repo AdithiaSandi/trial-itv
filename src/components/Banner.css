@@ -1,3 +1,7 @@
 .container.banner {
     color: white;
 }
+
+.container.banner .wrapper {
+    padding: 1em;
+}

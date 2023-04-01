@@ -53,7 +53,7 @@ function App () {
     <div className="App">
       <MenuBar />
       <Banner />
-      <Container>
+      <Container className='cards'>
         <Row className="m-auto cards-row">
           {data.map((item, index) => {
             return (
