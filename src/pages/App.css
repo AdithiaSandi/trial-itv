@@ -20,6 +20,11 @@ body {
   );
 }
 
+.container .row.cards-row {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 @keyframes bgColor {
   from {
     background-color: rgba(53, 188, 230, 0.753);
@@ -36,7 +41,6 @@ body {
 .btn-fav {
     margin-left: 1em;
 }
-
 
 .modal a {
     text-decoration: none;

@@ -30,7 +30,7 @@ export const ProfileCard = ({ item, index, fav, handleFav, handleShow }) => {
       <Card.Body>
         <Card.Title>{item.username}</Card.Title>
 
-        <div>
+        <div style={{ textOverflow: 'ellipsis', display: 'flex' }}>
           <img
             src={emailIcon}
             alt=""

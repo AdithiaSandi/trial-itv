@@ -7,6 +7,7 @@ import { DetailModal } from '../components/DetailModal'
 import { useSelector, useDispatch } from 'react-redux'
 import { addFavorite, selectFavorite } from '../state/reducer/favoriteSlice'
 import { MenuBar } from '../components/MenuBar'
+import { Banner } from '../components/Banner'
 
 function App () {
   const [data, setData] = useState([])
@@ -27,12 +28,12 @@ function App () {
     let temp = fav
     if (temp.indexOf(int) !== -1) {
       temp = temp.filter((item) => item !== int)
-      dispatch(addFavorite(temp))/// /////////////REDUX
+      dispatch(addFavorite(temp)) /// /////////////REDUX
       alert('unfaved')
     } else {
       temp = temp.filter((item) => typeof item === 'number')
       temp.push(int)
-      dispatch(addFavorite(temp))/// /////////////REDUX
+      dispatch(addFavorite(temp)) /// /////////////REDUX
       alert('faved')
     }
   }
@@ -50,9 +51,10 @@ function App () {
 
   return (
     <div className="App">
-      <MenuBar/>
+      <MenuBar />
+      <Banner />
       <Container>
-        <Row className="m-auto">
+        <Row className="m-auto cards-row">
           {data.map((item, index) => {
             return (
               <ProfileCard
