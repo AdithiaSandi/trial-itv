@@ -10,6 +10,7 @@ import { addFavorite, selectFavorite } from '../state/reducer/favoriteSlice'
 import { MenuBar } from '../components/MenuBar'
 import { Banner } from '../components/Banner'
 import { Footer } from '../components/Footer'
+import { ScrollTop } from '../components/ScrollTop'
 
 function App () {
   const [data, setData] = useState([])
@@ -55,6 +56,7 @@ function App () {
     <div className="App">
       <MenuBar />
       <Banner />
+      <ScrollTop />
       <Container className='cards'>
         <Row className="m-auto cards-row">
           {data.map((item, index) => {

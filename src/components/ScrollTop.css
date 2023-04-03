@@ -1,0 +1,12 @@
+button.btn-scroll-top {
+    display: none;
+}
+
+button.btn-scroll-top.scrolled {
+    position: fixed;
+    display: block;
+    right: 3%;
+    top: 85%;
+    z-index: 1;
+    /* border: var(--background) 1px solid; */
+}

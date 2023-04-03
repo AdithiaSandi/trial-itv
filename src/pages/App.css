@@ -2,6 +2,10 @@
   --background: #121212;
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #121212 !important;
 }
