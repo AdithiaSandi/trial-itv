@@ -1,12 +1,35 @@
 button.btn-scroll-top {
+  position: fixed;
+  display: block;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.3s, opacity 0.3s linear;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
     display: none;
+  }
 }
 
 button.btn-scroll-top.scrolled {
-    position: fixed;
-    display: block;
-    right: 3%;
-    top: 85%;
-    z-index: 1;
-    /* border: var(--background) 1px solid; */
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s linear;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
