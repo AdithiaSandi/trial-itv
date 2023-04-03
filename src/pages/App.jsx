@@ -1,4 +1,5 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Container, Row } from 'react-bootstrap'
@@ -8,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addFavorite, selectFavorite } from '../state/reducer/favoriteSlice'
 import { MenuBar } from '../components/MenuBar'
 import { Banner } from '../components/Banner'
+import { Footer } from '../components/Footer'
 
 function App () {
   const [data, setData] = useState([])
@@ -69,6 +71,7 @@ function App () {
           })}
         </Row>
       </Container>
+      <Footer />
 
       {profile === 0 || profile
         ? (
