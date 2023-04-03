@@ -1,9 +1,27 @@
 footer .container .wrapper {
-    border-top: 1px solid white;
+  border-top: 1px solid white;
 }
 
 footer .container .wrapper .footer-row {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+footer .container .wrapper .footer-row .socials ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  text-align: left;
+}
+
+footer .container .wrapper .footer-row .socials ul li {
+    display: inline;
+}
+
+@media (width >= 768px) and (width <= 991px){
+  footer .container .wrapper .footer-row .socials ul {
+    display: inline;
+  }
 }
