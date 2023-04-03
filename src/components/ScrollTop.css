@@ -1,7 +1,7 @@
 button.btn-scroll-top {
   position: fixed;
   display: block;
-  bottom: 10px;
+  bottom: 60px;
   right: 10px;
   z-index: 1;
   visibility: hidden;
