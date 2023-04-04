@@ -49,16 +49,16 @@ export const MenuBar = () => {
             <div className={isMobile ? 'start ' + 'false' : 'start'}>
               <ul>
                 <li>
-                  <a href=".">Home</a>
+                  <a href="#">Home</a>
                 </li>
                 <li>
-                  <a href=".">Products</a>
+                  <a href="#project">Projects</a>
                 </li>
                 <li>
-                  <a href=".">Team</a>
+                  <a href="#team">Team</a>
                 </li>
                 <li>
-                  <a href=".">About</a>
+                  <a href="#about">About</a>
                 </li>
               </ul>
             </div>

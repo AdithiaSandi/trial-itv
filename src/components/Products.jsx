@@ -38,7 +38,7 @@ export const Products = () => {
       <Container>
         <Row>
           <Col>
-            <h2>Products</h2>
+            <h2>Projects</h2>
             <p className='section-description'>
               Fugiat exercitation tempor dolor enim nulla sunt et adipisicing
               officia consequat in duis quis nulla. Tempor qui in exercitation

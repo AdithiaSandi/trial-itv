@@ -59,7 +59,7 @@ function App () {
       <Banner />
       <Products />
       <ScrollTop />
-      <Container className='cards'>
+      <Container className='cards' id='team'>
         <Row className="m-auto cards-row">
           {data.map((item, index) => {
             return (

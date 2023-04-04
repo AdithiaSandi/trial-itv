@@ -18,3 +18,7 @@ body {
 .modal a {
     text-decoration: none;
 }
+
+#team {
+  padding-top: 5em;
+}

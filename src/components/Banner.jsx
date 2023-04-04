@@ -54,11 +54,11 @@ export const Banner = () => {
   }
 
   return (
-    <div className="container banner">
+    <div className="container banner" id='banner'>
       <div className="wrapper">
         <div className="overlay">
           <div className="content">
-            <h1>
+            <h1 className='overflow-hidden'>
               HELLO{' '}
               <div
                 className={font}
