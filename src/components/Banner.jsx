@@ -57,21 +57,23 @@ export const Banner = () => {
     <div className="container banner">
       <div className="wrapper">
         <div className="overlay">
-          <h1>
-            HELLO{' '}
-            <div
-              className={font}
-              style={{ textDecoration: 'underline', minHeight: '65px' }}
-            >
-              {text}
-            </div>
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum amet
-            nihil debitis ea voluptate fugit sequi ex, expedita optio ipsum
-            minus dolores sed a excepturi adipisci odit repellendus doloribus
-            non.
-          </p>
+          <div className="content">
+            <h1>
+              HELLO{' '}
+              <div
+                className={font}
+                style={{ textDecoration: 'underline', minHeight: '65px' }}
+              >
+                {text}
+              </div>
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+              amet nihil debitis ea voluptate fugit sequi ex, expedita optio
+              ipsum minus dolores sed a excepturi adipisci odit repellendus
+              doloribus non.
+            </p>
+          </div>
         </div>
       </div>
     </div>

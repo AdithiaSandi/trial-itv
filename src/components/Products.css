@@ -1,7 +1,7 @@
 .project {
   padding: 80px 0;
   position: relative;
-  background-color: black;
+  background-color: var(--background);
 }
 .project h2 {
   font-size: 45px;

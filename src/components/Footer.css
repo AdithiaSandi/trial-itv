@@ -1,5 +1,11 @@
+footer {
+  margin-top: 5rem;
+}
+
 footer .container .wrapper {
   border-top: 1px solid white;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 footer .container .wrapper .footer-row {

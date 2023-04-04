@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer>
       <Container>
-        <div className="wrapper py-3">
+        <div className="wrapper">
           <Row className="footer-row">
             <Col className="copyright pe-0">
               <span className="mb-3 mb-md-0 text-white">© 2022 Peepo, Inc</span>
