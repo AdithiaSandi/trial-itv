@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addFavorite, selectFavorite } from '../state/reducer/favoriteSlice'
 import { MenuBar } from '../components/MenuBar'
 import { Banner } from '../components/Banner'
+import { Products } from '../components/Products'
 import { Footer } from '../components/Footer'
 import { ScrollTop } from '../components/ScrollTop'
 
@@ -56,6 +57,7 @@ function App () {
     <div className="App">
       <MenuBar />
       <Banner />
+      <Products />
       <ScrollTop />
       <Container className='cards'>
         <Row className="m-auto cards-row">
