@@ -16,7 +16,7 @@ header {
 
 header .header-border {
   background-color: var(--background);
-  border-bottom: white solid;
+  /* border-bottom: white solid; */
 }
 
 header .container {
@@ -25,7 +25,6 @@ header .container {
 }
 
 header .wrapper {
-  /* margin: 1rem 0; */
   display: flex;
   justify-content: space-between;
   align-items: center;
