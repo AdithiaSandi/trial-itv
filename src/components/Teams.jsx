@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import './styles/Teams.css'
+import { TeamsCarousel } from './TeamsCarousel.jsx'
 import { Container, Row } from 'react-bootstrap'
 import { ProfileCard } from '../components/ProfileCard.jsx'
 import { DetailModal } from '../components/DetailModal'
@@ -47,6 +49,7 @@ export const Teams = () => {
   }, [])
   return (
     <Container className="cards" id="team">
+      <TeamsCarousel />
       <Row className="m-auto cards-row">
         {data.map((item, index) => {
           return (

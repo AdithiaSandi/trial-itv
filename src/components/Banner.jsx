@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import './Banner.css'
+import './styles/Banner.css'
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0)

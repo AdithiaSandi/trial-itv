@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './MenuBar.css'
+import './styles/MenuBar.css'
 import logo from '../assets/logo.svg'
 import search from '../assets/search-magnifying-glass-svgrepo-com.svg'
 import condense from '../assets/chevron-right-duo-svgrepo-com.svg'

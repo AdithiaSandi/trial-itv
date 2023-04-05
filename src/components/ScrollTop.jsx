@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './ScrollTop.css'
+import './styles/ScrollTop.css'
 import { Button } from 'react-bootstrap'
 
 export const ScrollTop = () => {

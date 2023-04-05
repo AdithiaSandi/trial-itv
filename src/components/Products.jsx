@@ -4,7 +4,7 @@ import projImg1 from '../assets/project-img1.png'
 import projImg2 from '../assets/project-img2.png'
 import projImg3 from '../assets/project-img3.png'
 import { ProductCard } from './ProductCard'
-import './Products.css'
+import './styles/Products.css'
 
 export const Products = () => {
   const projects = [

@@ -1,5 +1,5 @@
 import React from 'react'
-import './ProfileCard.css'
+import './styles/ProfileCard.css'
 import { Card, Button } from 'react-bootstrap'
 import emailIcon from '../assets/email-svgrepo-com.svg'
 import webIcon from '../assets/website-ui-web-svgrepo-com.svg'
