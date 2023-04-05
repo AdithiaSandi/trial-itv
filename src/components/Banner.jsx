@@ -81,9 +81,8 @@ export const Banner = () => {
                 {text}
               </div>
             </h1>
-            <p>
-              &quot; {quotes.text} &quot; - {quotes.author}
-            </p>
+            <p>&quot; {quotes.text} &quot;</p>
+            <p> - {quotes.author}</p>
           </div>
         </div>
       </div>
