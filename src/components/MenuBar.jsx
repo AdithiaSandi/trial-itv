@@ -95,10 +95,10 @@ export const MenuBar = () => {
           </div>
           <div className={ isMobile ? 'collapsible ' + showNav : 'collapsible'}>
             <ul>
-              <li><a href='.'>Home</a></li>
-              <li><a href='.'>Products</a></li>
-              <li><a href='.'>Team</a></li>
-              <li><a href='.'>About</a></li>
+              <li><a href='#'>Home</a></li>
+              <li><a href='#project'>Projects</a></li>
+              <li><a href='#team'>Team</a></li>
+              <li><a href='about'>About</a></li>
             </ul>
           </div>
         </div>
