@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Tab, Nav } from 'react-bootstrap'
+import { Container, Row, Col, Tab, Nav, Carousel } from 'react-bootstrap'
 import projImg1 from '../assets/project-img1.png'
 import projImg2 from '../assets/project-img2.png'
 import projImg3 from '../assets/project-img3.png'
@@ -39,7 +39,7 @@ export const Products = () => {
         <Row>
           <Col>
             <h2>Projects</h2>
-            <p className='section-description'>
+            <p className="section-description">
               Fugiat exercitation tempor dolor enim nulla sunt et adipisicing
               officia consequat in duis quis nulla. Tempor qui in exercitation
               est. Lorem ea ad minim sint Lorem occaecat irure excepteur.
@@ -51,23 +51,34 @@ export const Products = () => {
                 className="nav-pills mb-5 justify-content-center align-items-center"
                 id="pills-tab"
               >
-                <Nav.Item className='overflow-hidden'>
+                <Nav.Item className="overflow-hidden">
                   <Nav.Link eventKey="first">FRONTEND</Nav.Link>
                 </Nav.Item>
-                <Nav.Item className='overflow-hidden'>
+                <Nav.Item className="overflow-hidden">
                   <Nav.Link eventKey="second">BACKEND</Nav.Link>
                 </Nav.Item>
-                <Nav.Item className='overflow-hidden'>
+                <Nav.Item className="overflow-hidden">
                   <Nav.Link eventKey="third">UI/UX</Nav.Link>
                 </Nav.Item>
               </Nav>
               <Tab.Content>
                 <Tab.Pane eventKey="first">
+                  <Carousel indicators={false} variant='dark'>
+                    {projects
+                      .filter((project, index) => index < 3)
+                      .map((project, index) => {
+                        return (
+                          <Carousel.Item key={index}>
+                            <ProductCard project={project} />
+                          </Carousel.Item>
+                        )
+                      })}
+                  </Carousel>
                   <Row>
                     {projects
                       .filter((project, index) => index < 3)
                       .map((project, index) => {
-                        return <ProductCard key={index} project={project}/>
+                        return <ProductCard key={index} project={project} />
                       })}
                   </Row>
                 </Tab.Pane>

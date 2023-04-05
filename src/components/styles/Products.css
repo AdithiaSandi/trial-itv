@@ -136,3 +136,15 @@
   right: 0;
   z-index: -4;
 }
+
+@media (width < 576px) {
+  .tab-content .tab-pane .row {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .tab-content .tab-pane .carousel.slide {
+    display: none;
+  }
+}

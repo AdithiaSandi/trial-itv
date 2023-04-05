@@ -1,3 +1,23 @@
 .container.cards .carousel .carousel-inner .carousel-item img {
-    height: 100vw;
+  height: 100vw;
+}
+
+.container.cards .carousel .carousel-inner .carousel-item .carousel-caption {
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 18, 18, 1) 45%,
+    rgba(18, 18, 18, 0.7) 80%
+  );
+}
+
+.container.cards .carousel .carousel-inner .carousel-item .carousel-caption {
+  padding-bottom: 0;
+}
+
+.container.cards .carousel .carousel-inner .carousel-item .carousel-caption p {
+  margin-bottom: 0;
 }

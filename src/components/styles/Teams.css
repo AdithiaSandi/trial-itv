@@ -9,3 +9,10 @@
         display: none;
     }
 }
+
+.container.cards h1 {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 45px;
+}

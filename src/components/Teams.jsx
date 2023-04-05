@@ -49,7 +49,13 @@ export const Teams = () => {
   }, [])
   return (
     <Container className="cards" id="team">
-      <TeamsCarousel />
+      <h1>Teams</h1>
+      <TeamsCarousel
+        data={data}
+        fav={fav}
+        handleFav={handleFav}
+        handleShow={handleShow}
+      />
       <Row className="m-auto cards-row">
         {data.map((item, index) => {
           return (

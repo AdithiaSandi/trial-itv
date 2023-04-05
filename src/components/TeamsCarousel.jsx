@@ -1,8 +1,9 @@
 import React from 'react'
-import { Carousel } from 'react-bootstrap'
+import { Carousel, Button } from 'react-bootstrap'
 import './styles/TeamsCarousel.css'
+import PropTypes from 'prop-types'
 
-export const TeamsCarousel = () => {
+export const TeamsCarousel = ({ data, fav, handleFav, handleShow }) => {
   const links = [
     'https://i.kym-cdn.com/photos/images/newsfeed/001/865/673/cc9.png',
     'https://i.kym-cdn.com/entries/icons/original/000/001/030/DButt.jpg',
@@ -18,21 +19,50 @@ export const TeamsCarousel = () => {
 
   return (
     <Carousel indicators={false}>
-      {links.map((item, index) => {
+      {data.map((item, index) => {
         return (
           <Carousel.Item key={index}>
             <img
               className="d-block w-100"
               src={links[index]}
               alt="First slide"
+              onClick={() => handleShow(index)}
             />
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3 onClick={() => handleShow(index)}>{item.username}</h3>
+              <Button
+                variant={
+                  fav.find((item) => item === index) >= 0
+                    ? 'danger'
+                    : 'outline-danger'
+                }
+                onClick={() => handleFav(index)}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="bi bi-heart-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                  />
+                </svg>
+              </Button>
             </Carousel.Caption>
           </Carousel.Item>
         )
       })}
     </Carousel>
   )
+}
+
+TeamsCarousel.propTypes = {
+  data: PropTypes.array,
+  fav: PropTypes.array,
+  handleFav: PropTypes.func,
+  handleShow: PropTypes.func
 }
