@@ -19,10 +19,10 @@
   width: 56%;
 }
 
-@media (max-width: 500px ) {
-    .project p.section-description {
-        display: none;
-    }
+@media (max-width: 500px) {
+  .project p.section-description {
+    display: none;
+  }
 }
 
 .project .nav.nav-pills {
@@ -110,6 +110,11 @@
 .proj-imgbx:hover .proj-txtx {
   top: 50%;
   opacity: 1;
+}
+@media (max-width: 575px) {
+  .proj-imgbx img {
+    width: 100%;
+  }
 }
 .proj-txtx h4 {
   font-size: 30px;
