@@ -22,7 +22,7 @@ export const DetailModal = ({ show, handleClose, data, profile }) => {
               alt=""
               style={{ width: '20px', height: '20px' }}
             />{' '}
-            {data[profile].email}
+            <span>{data[profile].email}</span>
           </a>
         </div>
         <div>
@@ -31,7 +31,7 @@ export const DetailModal = ({ show, handleClose, data, profile }) => {
             alt=""
             style={{ width: '20px', height: '20px' }}
           />{' '}
-          {data[profile].address.city}
+          <span>{data[profile].address.city}</span>
           <span> City</span>
         </div>
         <div>
@@ -41,7 +41,7 @@ export const DetailModal = ({ show, handleClose, data, profile }) => {
               alt=""
               style={{ width: '20px', height: '20px' }}
             />{' '}
-            {data[profile].phone}
+            <span>{data[profile].phone}</span>
           </a>
         </div>
         <div>
@@ -51,7 +51,7 @@ export const DetailModal = ({ show, handleClose, data, profile }) => {
               alt=""
               style={{ width: '20px', height: '20px' }}
             />{' '}
-            My Website
+            <span>My Website</span>
           </a>
         </div>
         <div>
@@ -60,7 +60,7 @@ export const DetailModal = ({ show, handleClose, data, profile }) => {
             alt=""
             style={{ width: '20px', height: '20px' }}
           />{' '}
-          {data[profile].company.name}
+          <span>{data[profile].company.name}</span>
         </div>
       </Modal.Body>
     </Modal>

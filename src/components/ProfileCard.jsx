@@ -38,7 +38,7 @@ export const ProfileCard = ({ item, index, fav, handleFav, handleShow }) => {
               alt=""
               style={{ width: '20px', height: '20px' }}
             />
-            <span> {item.email}</span>
+            <span>{item.email}</span>
           </div>
           <div>
             <a
@@ -52,7 +52,7 @@ export const ProfileCard = ({ item, index, fav, handleFav, handleShow }) => {
                 alt=""
                 style={{ width: '20px', height: '20px' }}
               />
-              <span> My Website</span>
+              <span>My Website</span>
             </a>
           </div>
           <div style={{ marginBottom: '1em' }}>
@@ -61,7 +61,7 @@ export const ProfileCard = ({ item, index, fav, handleFav, handleShow }) => {
               alt=""
               style={{ width: '20px', height: '20px' }}
             />
-            <span> {item.company.name}</span>
+            <span>{item.company.name}</span>
           </div>
         </div>
 
