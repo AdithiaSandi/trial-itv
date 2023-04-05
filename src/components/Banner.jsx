@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import './Banner.css'
 
 export const Banner = () => {
@@ -19,11 +20,24 @@ export const Banner = () => {
     'math',
     'fangsong'
   ]
+  const [quotes, setQuotes] = useState({ text: '', author: '' })
 
   useEffect(() => {
     const ticker = setInterval(() => {
       tick()
     }, delta)
+
+    if (quotes.text === '') {
+      axios
+        .get('https://type.fit/api/quotes')
+        .then((res) => {
+          console.log(res)
+          setQuotes(res.data[Math.floor(Math.random() * res.data.length)])
+        })
+        .catch((err) => {
+          setQuotes(err)
+        })
+    }
 
     return () => {
       clearInterval(ticker)
@@ -54,11 +68,11 @@ export const Banner = () => {
   }
 
   return (
-    <div className="container banner" id='banner'>
+    <div className="container banner" id="banner">
       <div className="wrapper">
         <div className="overlay">
           <div className="content">
-            <h1 className='overflow-hidden'>
+            <h1 className="overflow-hidden">
               HELLO{' '}
               <div
                 className={font}
@@ -68,10 +82,7 @@ export const Banner = () => {
               </div>
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-              amet nihil debitis ea voluptate fugit sequi ex, expedita optio
-              ipsum minus dolores sed a excepturi adipisci odit repellendus
-              doloribus non.
+              &quot; {quotes.text} &quot; - {quotes.author}
             </p>
           </div>
         </div>

@@ -122,13 +122,14 @@
 }
 
 @media (max-width: 400px) {
+  .container.banner {
+    height: 100vh;
+  }
+
   .container.banner .wrapper .overlay h1 div {
     font-size: 55px;
   }
-
-  .container.banner .wrapper .overlay p {
-    display: none;
-  } 
+  
 }
 
 .container.banner .wrapper .overlay p {
