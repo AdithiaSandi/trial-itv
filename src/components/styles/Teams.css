@@ -1,0 +1,11 @@
+@media (width < 540px) {
+    .container.cards .cards-row {
+        display: none;
+    }
+}
+
+@media (min-width: 540px) {
+    .container.cards .carousel.slide {
+        display: none;
+    }
+}
