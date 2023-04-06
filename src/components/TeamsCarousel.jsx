@@ -36,10 +36,10 @@ export const TeamsCarousel = ({ data, range, fav, handleFav, handleShow }) => {
               className="d-block w-100"
               src={links.slice(range, range + 4)[index]}
               alt="First slide"
-              onClick={() => handleShow(index)}
+              onClick={() => handleShow(index + range)}
             />
             <Carousel.Caption>
-              <h3 onClick={() => handleShow(index)}>{item.username}</h3>
+              <h3 onClick={() => handleShow(index + range)}>{item.username}</h3>
               <Button
                 variant={
                   fav.find((item) => item === index) >= 0
