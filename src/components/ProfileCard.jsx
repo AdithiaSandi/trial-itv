@@ -65,7 +65,7 @@ export const ProfileCard = ({ item, index, fav, handleFav, handleShow }) => {
           </div>
         </div>
 
-        <Card.Footer style={{display: 'flex', justifyContent: 'space-evenly'}}>
+        <Card.Footer style={{ display: 'flex', justifyContent: 'space-evenly' }}>
           <Button variant="dark" onClick={() => handleShow(index)}>
             Detail
           </Button>
