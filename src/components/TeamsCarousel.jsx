@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Carousel, Button } from 'react-bootstrap'
 import './styles/TeamsCarousel.css'
 import PropTypes from 'prop-types'
@@ -17,8 +17,18 @@ export const TeamsCarousel = ({ data, range, fav, handleFav, handleShow }) => {
     'https://i1.sndcdn.com/artworks-000124032539-aq9bce-t500x500.jpg'
   ]
 
+  const [index, setIndex] = useState(0)
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex)
+  }
+
+  useEffect(() => {
+    setIndex(0)
+  }, [range])
+
   return (
-    <Carousel indicators={false}>
+    <Carousel indicators={false} activeIndex={index} onSelect={handleSelect}>
       {data.slice(range, range + 4).map((item, index) => {
         return (
           <Carousel.Item key={index}>
