@@ -3,7 +3,7 @@ import { Carousel, Button } from 'react-bootstrap'
 import './styles/TeamsCarousel.css'
 import PropTypes from 'prop-types'
 
-export const TeamsCarousel = ({ data, fav, handleFav, handleShow }) => {
+export const TeamsCarousel = ({ data, range, fav, handleFav, handleShow }) => {
   const links = [
     'https://i.kym-cdn.com/photos/images/newsfeed/001/865/673/cc9.png',
     'https://i.kym-cdn.com/entries/icons/original/000/001/030/DButt.jpg',
@@ -19,12 +19,12 @@ export const TeamsCarousel = ({ data, fav, handleFav, handleShow }) => {
 
   return (
     <Carousel indicators={false}>
-      {data.map((item, index) => {
+      {data.slice(range, range + 4).map((item, index) => {
         return (
           <Carousel.Item key={index}>
             <img
               className="d-block w-100"
-              src={links[index]}
+              src={links.slice(range, range + 4)[index]}
               alt="First slide"
               onClick={() => handleShow(index)}
             />
@@ -62,6 +62,7 @@ export const TeamsCarousel = ({ data, fav, handleFav, handleShow }) => {
 
 TeamsCarousel.propTypes = {
   data: PropTypes.array,
+  range: PropTypes.number,
   fav: PropTypes.array,
   handleFav: PropTypes.func,
   handleShow: PropTypes.func

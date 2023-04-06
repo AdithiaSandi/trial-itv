@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './styles/Teams.css'
 import { TeamsCarousel } from './TeamsCarousel.jsx'
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row, Nav, Col } from 'react-bootstrap'
 import { ProfileCard } from '../components/ProfileCard.jsx'
 import { DetailModal } from '../components/DetailModal'
 import { useSelector, useDispatch } from 'react-redux'
@@ -10,6 +10,8 @@ import { addFavorite, selectFavorite } from '../state/reducer/favoriteSlice'
 
 export const Teams = () => {
   const [data, setData] = useState([])
+  const [shown, setShown] = useState([])
+  const [range, setRange] = useState(0)
   const [show, setShow] = useState(false)
   const [profile, setProfile] = useState()
 
@@ -42,26 +44,73 @@ export const Teams = () => {
       .get('https://jsonplaceholder.typicode.com/users')
       .then((res) => {
         setData(res.data)
+        setShown(res.data.slice(0, 4))
       })
       .catch((err) => {
         alert(err.response)
       })
   }, [])
+
+  const shownProfile = (id) => {
+    if (id === 'first') {
+      setShown(data.slice(0, 4))
+      setRange(0)
+    } else if (id === 'second') {
+      setShown(data.slice(4, 8))
+      setRange(4)
+    } else {
+      setShown(data.slice(8))
+      setRange(8)
+    }
+  }
+
   return (
     <Container className="cards" id="team">
       <h1>Teams</h1>
+          <Nav
+            variant="pills"
+            className="nav-pills mb-5 justify-content-center align-items-center"
+            id="pills-tab"
+            defaultActiveKey="first"
+          >
+            <Nav.Item
+              className="overflow-hidden"
+              onClick={(e) => shownProfile(e.target.id)}
+            >
+              <Nav.Link eventKey="first" id="first">
+                FRONTEND
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item
+              className="overflow-hidden"
+              onClick={(e) => shownProfile(e.target.id)}
+            >
+              <Nav.Link eventKey="second" id="second">
+                BACKEND
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item
+              className="overflow-hidden"
+              onClick={(e) => shownProfile(e.target.id)}
+            >
+              <Nav.Link eventKey="third" id="third">
+                UI/UX
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
       <TeamsCarousel
         data={data}
+        range={range}
         fav={fav}
         handleFav={handleFav}
         handleShow={handleShow}
       />
       <Row className="m-auto cards-row">
-        {data.map((item, index) => {
+        {shown.map((item, index) => {
           return (
             <ProfileCard
               item={item}
-              index={index}
+              index={index + range}
               key={index}
               fav={fav}
               handleFav={handleFav}

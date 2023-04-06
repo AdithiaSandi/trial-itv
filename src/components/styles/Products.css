@@ -137,8 +137,12 @@
   z-index: -4;
 }
 
+.carousel a span {
+  background-color: black;
+}
+
 @media (width < 576px) {
-  .tab-content .tab-pane .row {
+  .tab-content .tab-pane#projects-tabs-tabpane-first .row {
     display: none;
   }
 }
