@@ -65,13 +65,14 @@
 }
 
 #about .content .stacks-row {
-    margin-top: 5vw;
+    margin-top: 5vh;
 }
 
 #about .content .stacks-row .first-row {
-    margin-bottom: 5vw;
+    margin-bottom: 5vh;
 }
 
 #about .content .stacks-row .row div svg {
     filter: invert(1);
+    max-height: 100px;
 }
