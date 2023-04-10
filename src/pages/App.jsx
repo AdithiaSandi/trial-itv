@@ -7,6 +7,7 @@ import { Products } from '../components/Products'
 import { Footer } from '../components/Footer'
 import { ScrollTop } from '../components/ScrollTop'
 import { Teams } from '../components/Teams'
+import { About } from '../components/About'
 
 function App () {
   return (
@@ -16,6 +17,7 @@ function App () {
       <Products />
       <Teams />
       <ScrollTop />
+      <About />
       <Footer />
     </div>
   )

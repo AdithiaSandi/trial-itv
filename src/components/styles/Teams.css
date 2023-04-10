@@ -92,6 +92,12 @@
   }
 }
 
+.container.cards .carousel.slide .carousel-inner .carousel-item img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 0 3vw;
+}
+
 .container.cards h1 {
   color: white;
   text-align: center;

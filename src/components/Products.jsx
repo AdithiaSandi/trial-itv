@@ -87,7 +87,7 @@ export const Products = () => {
                     <ProductCard key={3} project={projects[3]} />
                   </Row>
                 </Tab.Pane>
-                <Tab.Pane eventKey="third">
+                <Tab.Pane eventKey="third" style={{ color: '#b8b8b8' }}>
                   Consectetur minim tempor cillum nostrud elit nostrud quis
                   consequat eiusmod velit nostrud consectetur do. Veniam minim
                   sint anim est Lorem occaecat officia eu id. Anim duis

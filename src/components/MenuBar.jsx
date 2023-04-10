@@ -43,7 +43,7 @@ export const MenuBar = () => {
       <div className="header-border">
         <div className="container">
           <div className="wrapper">
-            <a href="." className='logo'>
+            <a href="." className="logo">
               <img src={logo}></img>
             </a>
             <div className={isMobile ? 'start ' + 'false' : 'start'}>
@@ -88,17 +88,25 @@ export const MenuBar = () => {
             </div>
           </div>
           <div className="search-small">
-            <input type="search" spellCheck='false'/>
+            <input type="search" spellCheck="false" />
             <button className="normal-search">
               <img src={search} />
             </button>
           </div>
-          <div className={ isMobile ? 'collapsible ' + showNav : 'collapsible'}>
+          <div className={isMobile ? 'collapsible ' + showNav : 'collapsible'}>
             <ul>
-              <li><a href='#'>Home</a></li>
-              <li><a href='#project'>Projects</a></li>
-              <li><a href='#team'>Team</a></li>
-              <li><a href='about'>About</a></li>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#project">Projects</a>
+              </li>
+              <li>
+                <a href="#team">Team</a>
+              </li>
+              <li>
+                <a href="#about-anchor">About</a>
+              </li>
             </ul>
           </div>
         </div>
