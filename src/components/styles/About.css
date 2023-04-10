@@ -57,6 +57,7 @@
   width: 100%;
   background-color: transparent;
   border-color: #863393;
+  border-radius: 20px;
 }
 
 #about .content .btn-wrapper button:hover {
