@@ -16,7 +16,7 @@ export const About = () => {
           <Row className="btn-wrapper">
             <Col></Col>
             <Col>
-              <Button>
+              <Button href="https://www.linkedin.com/in/adithia-simangunsong-a43a70236/" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -30,7 +30,7 @@ export const About = () => {
               </Button>
             </Col>
             <Col>
-              <Button>
+              <Button href="https://github.com/AdithiaSandi/trial-itv" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"

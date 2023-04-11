@@ -14,7 +14,7 @@ export const Footer = () => {
             <Col className="socials ps-0">
               <ul className="col-md-4">
                 <li className="ms-3">
-                  <a className="text-white" href="#">
+                  <a className="text-white" href="https://github.com/AdithiaSandi" target="_blank" rel="noreferrer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -28,7 +28,7 @@ export const Footer = () => {
                   </a>
                 </li>
                 <li className="ms-3">
-                  <a className="text-white" href="#">
+                  <a className="text-white" href="https://www.linkedin.com/in/adithia-simangunsong-a43a70236/" target="_blank" rel="noreferrer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -42,7 +42,7 @@ export const Footer = () => {
                   </a>
                 </li>
                 <li className="ms-3">
-                  <a className="text-white" href="#">
+                  <a className="text-white" href="https://api.whatsapp.com/send?phone=6281282369651" target="_blank" rel="noreferrer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -56,7 +56,7 @@ export const Footer = () => {
                   </a>
                 </li>
                 <li className="ms-3">
-                  <a className="text-white" href="#">
+                  <a className="text-white" href="https://t.me/AdithiaSandi" target="_blank" rel="noreferrer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
