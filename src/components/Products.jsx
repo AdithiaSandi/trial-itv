@@ -51,14 +51,14 @@ export const Products = () => {
                 className="nav-pills mb-5 justify-content-center align-items-center"
                 id="pills-tab"
               >
-                <Nav.Item className="overflow-hidden">
-                  <Nav.Link eventKey="first">FRONTEND</Nav.Link>
+                <Nav.Item>
+                  <Nav.Link className="text-truncate" eventKey="first">FRONTEND</Nav.Link>
                 </Nav.Item>
-                <Nav.Item className="overflow-hidden">
-                  <Nav.Link eventKey="second">BACKEND</Nav.Link>
+                <Nav.Item>
+                  <Nav.Link className="text-truncate" eventKey="second">BACKEND</Nav.Link>
                 </Nav.Item>
-                <Nav.Item className="overflow-hidden">
-                  <Nav.Link eventKey="third">UI/UX</Nav.Link>
+                <Nav.Item>
+                  <Nav.Link className="text-truncate" eventKey="third">UI/UX</Nav.Link>
                 </Nav.Item>
               </Nav>
               <Tab.Content>

@@ -77,7 +77,7 @@ export const Teams = () => {
               className="overflow-hidden"
               onClick={(e) => shownProfile(e.target.id)}
             >
-              <Nav.Link eventKey="first" id="first">
+              <Nav.Link className="text-truncate" eventKey="first" id="first">
                 FRONTEND
               </Nav.Link>
             </Nav.Item>
@@ -85,7 +85,7 @@ export const Teams = () => {
               className="overflow-hidden"
               onClick={(e) => shownProfile(e.target.id)}
             >
-              <Nav.Link eventKey="second" id="second">
+              <Nav.Link className="text-truncate" eventKey="second" id="second">
                 BACKEND
               </Nav.Link>
             </Nav.Item>
@@ -93,7 +93,7 @@ export const Teams = () => {
               className="overflow-hidden"
               onClick={(e) => shownProfile(e.target.id)}
             >
-              <Nav.Link eventKey="third" id="third">
+              <Nav.Link className="text-truncate" eventKey="third" id="third">
                 UI/UX
               </Nav.Link>
             </Nav.Item>
