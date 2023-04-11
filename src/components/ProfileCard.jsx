@@ -25,7 +25,6 @@ export const ProfileCard = ({ item, index, fav, handleFav, handleShow }) => {
       className="m-3 ms-0 me-0 text-truncate"
       key={index}
       style={{ width: '18rem', border: 'none' }}
-      onMouseOver={() => console.log('hover')}
     >
       <Card.Img variant="top" src={links[index]} style={{ height: '230px' }} />
       <Card.Body>

@@ -27,7 +27,6 @@ export const MenuBar = () => {
   }
 
   const resizeResponse = () => {
-    console.log('masuk')
     if (window.innerWidth >= 768) {
       setIsMobile(false)
       setShowNav(false)

@@ -31,7 +31,6 @@ export const Banner = () => {
       axios
         .get('https://type.fit/api/quotes')
         .then((res) => {
-          console.log(res)
           setQuotes(res.data[Math.floor(Math.random() * res.data.length)])
         })
         .catch((err) => {
