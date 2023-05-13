@@ -80,7 +80,7 @@ export const MenuBar = () => {
                 </button>
               </div>
             </div>
-            <div className="btn-collapse">
+            <div className={'btn-collapse ' + showNav}>
               <button onClick={() => toggleNav()}>
                 <img src={collapse} />
               </button>
