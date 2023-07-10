@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container, Row, Col, Tab, Nav, Carousel } from 'react-bootstrap'
-import projImg1 from '../assets/project-img1.png'
-import projImg2 from '../assets/project-img2.png'
-import projImg3 from '../assets/project-img3.png'
+import projImg1 from '../assets/e-commerce.png'
+import projImg2 from '../assets/immersive-dashboard.png'
+import projImg3 from '../assets/rozhok-app.png'
 import { ProductCard } from './ProductCard'
 import './styles/Products.css'
 

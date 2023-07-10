@@ -111,6 +111,10 @@
   top: 50%;
   opacity: 1;
 }
+
+.proj-imgbx img {
+  min-height: 350px;
+}
 @media (max-width: 575px) {
   .proj-imgbx img {
     width: 100%;
@@ -138,7 +142,7 @@
 }
 
 .carousel a span {
-  background-color: black;
+  background-color: transparent;
 }
 
 @media (width < 576px) {
