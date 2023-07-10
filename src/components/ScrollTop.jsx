@@ -20,8 +20,8 @@ export const ScrollTop = () => {
       variant="info"
       className={
         isScrolled
-          ? 'btn-scroll-top primary scrolled'
-          : 'btn-scroll-top primary'
+          ? 'btn-scroll-top primary pulse scrolled'
+          : 'btn-scroll-top primary pulse'
       }
       onClick={() => window.scrollTo(0, 0)}
     >

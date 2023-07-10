@@ -3,8 +3,13 @@ button.btn-scroll-top {
   display: block;
   bottom: 120px;
   right: 10px;
-  z-index: 1;
+  z-index: auto;
   visibility: hidden;
+  background: -webkit-linear-gradient(
+    90.21deg,
+    rgb(170, 54, 124) -5.91%,
+    rgb(74, 47, 189) 111.58%
+  );
   opacity: 0;
   transition: visibility 0s 0.3s, opacity 0.3s linear;
 }
@@ -31,5 +36,21 @@ button.btn-scroll-top.scrolled {
   }
   100% {
     opacity: 1;
+  }
+}
+
+.pulse {
+  animation: pulse-animation 3s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 1);
+  }
+  25% {
+    box-shadow: 0 0 0 10px rgba(97, 75, 196, 0.5);
+  }
+  75% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
   }
 }
