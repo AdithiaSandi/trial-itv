@@ -114,6 +114,7 @@
 
 .proj-imgbx img {
   min-height: 350px;
+  width: 100%;
 }
 @media (max-width: 575px) {
   .proj-imgbx img {
