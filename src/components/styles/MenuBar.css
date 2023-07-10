@@ -31,16 +31,8 @@ header .wrapper {
   padding: 1em;
 }
 
-@media (max-width: 499px) {
-  header .wrapper .logo img {
-    width: 125px;
-  }
-}
-
-@media (max-width: 320px) {
-  header .wrapper .logo img {
-    width: 100px;
-  }
+header .wrapper .logo img {
+  width: 50px;
 }
 
 header .start {
