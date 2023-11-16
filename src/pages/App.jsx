@@ -8,11 +8,11 @@ import { Footer } from '../components/Footer'
 import { ScrollTop } from '../components/ScrollTop'
 import { Teams } from '../components/Teams'
 import { About } from '../components/About'
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 function App () {
-  const TRACKING_ID = "G-JGRLH6VWQ1"; // YOUR_OWN_TRACKING_ID
-  ReactGA.initialize(TRACKING_ID);
+  const MEASUREMENT_ID = "G-JGRLH6VWQ1"; // YOUR_OWN_MEASUREMENT_ID
+  ReactGA.initialize(MEASUREMENT_ID);
   return (
     <div className="App">
       <MenuBar />
