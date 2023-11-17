@@ -1,6 +1,6 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { MenuBar } from '../components/MenuBar'
 import { Banner } from '../components/Banner'
 import { Products } from '../components/Products'
@@ -14,7 +14,10 @@ function App () {
   const MEASUREMENT_ID = "G-JGRLH6VWQ1"; // YOUR_OWN_MEASUREMENT_ID
   ReactGA.initialize(MEASUREMENT_ID, { debug: true });
   // ReactGA.pageview(window.location.pathname + window.location.search)
-  ReactGA.send("pageview")
+  useEffect(() => {
+    ReactGA.send("pageview")
+  }, [])
+  
   return (
     <div className="App">
       <MenuBar />
