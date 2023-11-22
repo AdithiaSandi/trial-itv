@@ -8,7 +8,7 @@ import { Footer } from '../components/Footer'
 import { ScrollTop } from '../components/ScrollTop'
 import { Teams } from '../components/Teams'
 import { About } from '../components/About'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 
 const MEASUREMENT_ID = 'G-JGRLH6VWQ1' // YOUR_OWN_MEASUREMENT_ID
 ReactGA.initialize(MEASUREMENT_ID, { debug: true })
