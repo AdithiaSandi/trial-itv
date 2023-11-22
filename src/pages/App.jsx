@@ -8,17 +8,17 @@ import { Footer } from '../components/Footer'
 import { ScrollTop } from '../components/ScrollTop'
 import { Teams } from '../components/Teams'
 import { About } from '../components/About'
-import ReactGA from 'react-ga4';
+import ReactGA from 'react-ga'
 
-const MEASUREMENT_ID = "G-JGRLH6VWQ1"; // YOUR_OWN_MEASUREMENT_ID
-ReactGA.initialize(MEASUREMENT_ID, { debug: true });
+const MEASUREMENT_ID = 'G-JGRLH6VWQ1' // YOUR_OWN_MEASUREMENT_ID
+ReactGA.initialize(MEASUREMENT_ID, { debug: true })
 
 function App () {
-  // ReactGA.pageview(window.location.pathname + window.location.search)
+  ReactGA.pageview(window.location.pathname + window.location.search)
   useEffect(() => {
-    ReactGA.send("pageview")
+    ReactGA.send('pageview')
   }, [])
-  
+
   return (
     <div className="App">
       <MenuBar />
