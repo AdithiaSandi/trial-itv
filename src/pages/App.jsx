@@ -14,7 +14,7 @@ const MEASUREMENT_ID = 'G-JGRLH6VWQ1' // YOUR_OWN_MEASUREMENT_ID
 ReactGA.initialize(MEASUREMENT_ID, { debug: true })
 
 function App () {
-  ReactGA.pageview(window.location.pathname + window.location.search)
+  // ReactGA.pageview(window.location.pathname + window.location.search)
   useEffect(() => {
     ReactGA.send('pageview')
   }, [])
