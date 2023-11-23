@@ -1,6 +1,6 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { MenuBar } from '../components/MenuBar'
 import { Banner } from '../components/Banner'
 import { Products } from '../components/Products'
@@ -10,12 +10,13 @@ import { Teams } from '../components/Teams'
 import { About } from '../components/About'
 import ReactGA from 'react-ga4'
 
-const MEASUREMENT_ID = 'G-JGRLH6VWQ1' // YOUR_OWN_MEASUREMENT_ID
-ReactGA.initialize(MEASUREMENT_ID, { debug: true })
-
 function App () {
   // ReactGA.pageview(window.location.pathname + window.location.search)
   // ReactGA.send('pageview')
+  // useEffect(() => {
+  //   const MEASUREMENT_ID = 'G-JGRLH6VWQ1' // YOUR_OWN_MEASUREMENT_ID
+  //   ReactGA.initialize(MEASUREMENT_ID, { debug: true })
+  // })
 
   return (
     <div className="App">
